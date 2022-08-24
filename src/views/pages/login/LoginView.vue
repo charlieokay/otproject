@@ -21,7 +21,7 @@ export default {
         return {
             user_id: 'sysadmin',
             user_pwd: 'Syntec1234',
-            user_token: ''
+            user_token: this.userToken
         };
     },
     methods: {
@@ -31,16 +31,17 @@ export default {
             axios.post('/api/public/user/login', {
                 "user_id": this.user_id,
                 "user_pwd": this.user_pwd,
+                headers: { "Authorization": "Bearer " + localStorage.getItem('Authorization') }
             })
                 .then(res => {
                     console.log(res);
                     console.log('-----------------')
                     console.log(res.data.content.token_data.token);//获取数据集内部token
                     // axios.defaults.headers.common['Authorization'] = res.headers.authorization
-                    // const Token = res.data.content.token_data.token;
+                    const Token = res.data.content.token_data.token;
                     // //将Token存入localStorage中
-                    // localStorage.setItem("token", Token)
-                    // // this.changeLogin({ Authorization: this.Token });
+                    localStorage.setItem("Authorization", Token)
+                    // this.changeLogin({ Authorization: this.Token });
                     // if (Token) {
                     //     this.$router.push('/product')//登录成功跳转到product页面
                     // } else {
@@ -48,12 +49,12 @@ export default {
                     // }
 
                     const userToken = res.data.content.token_data.token;
-                    // console.log(userToken + '打印userToken------------')
+                    console.log(userToken + '打印userToken------------')
+
                     // 将用户token保存到vuex中
-                    this.changeLogin(userToken);
+                    // this.changeLogin(userToken);
 
                     this.$router.push('/product');
-                    alert('进入成功')
 
                 })
                 .catch(err => {

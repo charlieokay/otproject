@@ -11,12 +11,12 @@ export default createStore({
   },
   mutations: {
     // 修改token，并将token存入localStorage
-    changeLogin(state, user) {
-      // console.log('打印user--------' + user)
-      state.Authorization = user.Authorization;
-      localStorage.setItem('Authorization', user);
+    // changeLogin(state, user) {
+    //   // console.log('打印user--------' + user)
+    //   state.Authorization = user.Authorization;
+    //   localStorage.setItem('Authorization', user);
 
-    }
+    // }
   },
   actions: {
   },
