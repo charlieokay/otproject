@@ -1,18 +1,38 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-  </div>
+  <el-tabs type="border-card">
+    <el-tab-pane label="User" @click="tochange">User</el-tab-pane>
+    <el-tab-pane label="Config">Config</el-tab-pane>
+    <el-tab-pane label="Role">Role</el-tab-pane>
+    <el-tab-pane label="Task">Task</el-tab-pane>
+  </el-tabs>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
+import type { TabsPaneContext } from 'element-plus'
 
-export default defineComponent({
-  name: 'HomeView',
-  components: {
-    HelloWorld,
+export default {
+  data() {
+    return {
+      activeName: 'first'
+    }
   },
-});
+  methods: {
+    handleClick(tab: TabsPaneContext, event: Event) {
+      console.log(tab, event)
+    },
+    tochange() {
+      console.log('.......')
+    }
+  }
+}
+
 </script>
+<style>
+.demo-tabs>.el-tabs__content {
+  padding: 32px;
+  color: #6b778c;
+  font-size: 32px;
+  font-weight: 600;
+}
+</style>
+

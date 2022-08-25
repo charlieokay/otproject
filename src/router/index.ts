@@ -1,18 +1,13 @@
 import { Router, createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-// import HomeView from '../views/HomeView.vue'
-import HomeTabs from '../views/HomeTabs.vue'
+import HomeView from '../views/HomeView.vue'
+
 
 
 const routes: Array<RouteRecordRaw> = [
-  // {
-  //   path: '/',
-  //   name: 'home',
-  //   component: HomeView
-  // },
   {
     path: '/',
-    name: 'hometabs',
-    component: HomeTabs
+    name: 'home',
+    component: HomeView
   },
   {
     path: '/about',
@@ -28,6 +23,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/product',
     name: 'product',
     component: () => import(/* webpackChunkName: "product" */ '../views/pages/product/ProductGet.vue')
+  },
+  {
+    path: '/dataresource',
+    name: 'dataresource',
+    component: () => import(/* webpackChunkName: "dataresource" */ '../views/pages/data/DataResource.vue')
+  },
+  {
+    path: '/drawingfile',
+    name: 'drawingfile',
+    component: () => import(/* webpackChunkName: "dataresource" */ '../views/pages/data/DrawingFile.vue')
   }
 ]
 
