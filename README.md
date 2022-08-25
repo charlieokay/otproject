@@ -14,6 +14,12 @@ npm install axios --save
 npm install jsonwebtoken --save
 ```
 
+## Element Plus install
+```
+安装组件库 Element Plus
+npm install element-plus --save
+```
+
 ### Compiles and hot-reloads for development
 ```
 npm run serve

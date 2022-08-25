@@ -1,6 +1,7 @@
 <template>
     <h4>登录首页</h4>
     <div>
+        <!-- <h5>{{ user_token }}</h5> -->
         <h4>请输入用户名</h4>
         <input type="text" v-model="user_id" placeholder="用户名" />
         <h4>请输入密码</h4>
@@ -21,7 +22,7 @@ export default {
         return {
             user_id: 'sysadmin',
             user_pwd: 'Syntec1234',
-            user_token: this.userToken
+            user_token: ''
         };
     },
     methods: {
@@ -34,26 +35,18 @@ export default {
                 headers: { "Authorization": "Bearer " + localStorage.getItem('Authorization') }
             })
                 .then(res => {
+                    //返回res数据
                     console.log(res);
-                    console.log('-----------------')
-                    console.log(res.data.content.token_data.token);//获取数据集内部token
-                    // axios.defaults.headers.common['Authorization'] = res.headers.authorization
+
+                    //获取数据集内部token
                     const Token = res.data.content.token_data.token;
-                    // //将Token存入localStorage中
+
+                    //将Token渲染到页面
+                    this.user_token = Token
+                    //将Token存入localStorage中
                     localStorage.setItem("Authorization", Token)
-                    // this.changeLogin({ Authorization: this.Token });
-                    // if (Token) {
-                    //     this.$router.push('/product')//登录成功跳转到product页面
-                    // } else {
-                    //     this.$router.push('/login')
-                    // }
 
-                    const userToken = res.data.content.token_data.token;
-                    console.log(userToken + '打印userToken------------')
-
-                    // 将用户token保存到vuex中
-                    // this.changeLogin(userToken);
-
+                    //跳转至product
                     this.$router.push('/product');
 
                 })
