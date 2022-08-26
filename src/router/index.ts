@@ -25,9 +25,9 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import(/* webpackChunkName: "product" */ '../views/pages/product/ProductGet.vue')
   },
   {
-    path: '/dataresource',
-    name: 'dataresource',
-    component: () => import(/* webpackChunkName: "dataresource" */ '../views/pages/custom/DataResource.vue')
+    path: '/process',
+    name: 'process',
+    component: () => import(/* webpackChunkName: "dataresource" */ '../views/pages/custom/ProcessView.vue')
   },
   {
     path: '/drawingfile',

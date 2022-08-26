@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     handleClick(tab: TabsPaneContext, event: Event) {
-      console.log(tab, event)
+      // console.log(tab, event)
     },
     tochange() {
       console.log('.......')

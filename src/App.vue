@@ -5,7 +5,7 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/login">Login</router-link> |
     <router-link to="/product">Product</router-link> |
-    <router-link to="/dataresource">DataResource</router-link> |
+    <router-link to="/process">程序调用</router-link> |
     <router-link to="/drawingfile">图纸</router-link>
 
   </nav>

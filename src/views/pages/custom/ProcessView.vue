@@ -1,10 +1,10 @@
 <template>
-    <h2>图档模块</h2>
+    <h2>程序调用模块</h2>
     <el-button @click="getdata">获取按钮</el-button>
     <el-row>
         <el-col v-for="list in showLists" :key="list.product_name" :span="8" :offset="index > 0 ? 2 : 0">
             <el-card :body-style="{ padding: '0px' }">
-                <img src="@/assets/drawingfile/MINI铝壳-破孔.jpeg" class="image" />
+                <img src="@/assets/processes/MINI测试01.png" class="image" />
                 <div style="padding: 14px">
                     <span>{{ list.product_name }}</span><br />
                     <span>{{ list.devices_name }}</span><br />
@@ -71,7 +71,7 @@ export default {
                         const devices_name = item.devices_name
                         const product_name = item.product_name
                         const tenant_id = item.tenant_id
-                        item?.custom_data_resource_columns?.drawingfile.
+                        item?.custom_data_resource_columns?.processes.
                             forEach((item1) => {
                                 const name = item1.name
                                 const file_name = item1.file_name
