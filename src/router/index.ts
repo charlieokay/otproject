@@ -1,4 +1,4 @@
-import { Router, createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 
 
@@ -27,12 +27,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/dataresource',
     name: 'dataresource',
-    component: () => import(/* webpackChunkName: "dataresource" */ '../views/pages/data/DataResource.vue')
+    component: () => import(/* webpackChunkName: "dataresource" */ '../views/pages/custom/DataResource.vue')
   },
   {
     path: '/drawingfile',
     name: 'drawingfile',
-    component: () => import(/* webpackChunkName: "dataresource" */ '../views/pages/data/DrawingFile.vue')
+    component: () => import(/* webpackChunkName: "dataresource" */ '../views/pages/custom/DrawingFile.vue')
   }
 ]
 

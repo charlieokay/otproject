@@ -12,7 +12,7 @@
 
 <script>
 import axios from 'axios'
-import userToken from '../login/LoginView.vue'
+
 export default {
     data() {
         return {
