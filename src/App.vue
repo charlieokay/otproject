@@ -6,7 +6,7 @@
     <router-link to="/login">Login</router-link> |
     <router-link to="/product">Product</router-link> |
     <router-link to="/process">程序调用</router-link> |
-    <router-link to="/drawingfile">图纸</router-link>
+    <router-link to="/drawingfile">工艺图纸</router-link>
 
   </nav>
   <router-view />
