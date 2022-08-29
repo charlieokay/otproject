@@ -2,22 +2,22 @@
     <h2>图档模块</h2>
     <el-button @click="getdata">获取按钮</el-button>
     <el-row>
-        <el-col v-for="list in showLists" :key="list.product_name" :span="8" :offset="index > 0 ? 2 : 0">
+        <el-col v-for="list in showLists" :key="list['product_name']" :span="8" :offset="list['index'] > 0 ? 2 : 0">
             <el-card :body-style="{ padding: '0px' }">
                 <img src="@/assets/drawingfile/MINI铝壳-破孔.jpeg" class="image" />
                 <div style="padding: 14px">
-                    <span>{{  list.product_name  }}</span><br />
-                    <span>{{  list.devices_name  }}</span><br />
-                    <span>{{  list.tenant_id  }}</span><br />
-                    <span>{{  list.name  }}</span><br />
-                    <span>{{  list.file_name  }}</span><br />
-                    <span>{{  list.file_path  }}</span><br />
-                    <span>{{  list.resource_type  }}</span><br />
-                    <span>{{  list.resource_type_str  }}</span><br />
+                    <span>{{  list['product_name']  }}</span><br />
+                    <span>{{  list['devices_name']  }}</span><br />
+                    <span>{{  list['tenant_id']  }}</span><br />
+                    <span>{{  list['name']  }}</span><br />
+                    <span>{{  list['file_name']  }}</span><br />
+                    <span>{{  list['file_path']  }}</span><br />
+                    <span>{{  list['resource_type']  }}</span><br />
+                    <span>{{  list['resource_type_str']  }}</span><br />
                     <div class="bottom">
-                        <time class="time">时间：{{  currentDate  }}</time>
+                        <time class="time">时间：</time>
                         <div>
-                            <pdf ref="pdf" :src="url">
+                            <pdf>
                             </pdf>
                         </div>
                         <el-button type="primary" plain>预览</el-button>
@@ -29,9 +29,10 @@
 
 </template>
 
-<script>
+<script >
 import axios from 'axios'
-// import pdf from 'vue-pdf'
+
+
 // export interface dataType {
 //     showLists: [],
 //     product_name: string,//产品名称
@@ -56,6 +57,9 @@ export default {
             resource_type: '',//类型英文
             resource_type_str: ''//类型中文
         }
+    },
+    components: {
+
     },
     // beforeCreate() {
     //     this.showList.push('12345')

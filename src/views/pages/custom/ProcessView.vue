@@ -2,20 +2,28 @@
     <h2>程序调用模块</h2>
     <el-button @click="getdata">获取按钮</el-button>
     <el-row>
-        <el-col v-for="list in showLists" :key="list.product_name" :span="8" :offset="index > 0 ? 2 : 0">
+        <el-col v-for="list in showLists" :key="list['product_name']" :span="8" :offset="list['index'] > 0 ? 2 : 0">
             <el-card :body-style="{ padding: '0px' }">
                 <img src="@/assets/processes/MINI测试01.png" class="image" />
                 <div style="padding: 14px">
-                    <span>{{ list.product_name }}</span><br />
+                    <!-- <span>{{ list.product_name }}</span><br />
                     <span>{{ list.devices_name }}</span><br />
                     <span>{{ list.tenant_id }}</span><br />
                     <span>{{ list.name }}</span><br />
                     <span>{{ list.file_name }}</span><br />
                     <span>{{ list.file_path }}</span><br />
                     <span>{{ list.resource_type }}</span><br />
-                    <span>{{ list.resource_type_str }}</span><br />
+                    <span>{{ list.resource_type_str }}</span><br /> -->
+                    <span>{{  list['product_name']  }}</span><br />
+                    <span>{{  list['devices_name']  }}</span><br />
+                    <span>{{  list['tenant_id']  }}</span><br />
+                    <span>{{  list['name']  }}</span><br />
+                    <span>{{  list['file_name']  }}</span><br />
+                    <span>{{  list['file_path']  }}</span><br />
+                    <span>{{  list['resource_type']  }}</span><br />
+                    <span>{{  list['resource_type_str']  }}</span><br />
                     <div class="bottom">
-                        <time class="time">{{ currentDate }}</time>
+                        <time class="time">{{ }}</time>
                         <el-button text class="button">Operating</el-button>
                     </div>
                 </div>
