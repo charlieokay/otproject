@@ -13,7 +13,8 @@ import type { TabsPaneContext } from 'element-plus'
 export default {
   data() {
     return {
-      activeName: 'first'
+      activeName: 'first',
+      jsPdf: '../assets/testfile.pdf'
     }
   },
   methods: {

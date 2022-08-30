@@ -1,8 +1,7 @@
 <template>
   <nav>
-
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link> |
+    <router-link to="/about">功能测试页面</router-link> |
     <router-link to="/login">Login</router-link> |
     <router-link to="/product">Product</router-link> |
     <router-link to="/process">程序调用</router-link> |
@@ -11,7 +10,7 @@
   </nav>
   <router-view />
 </template>
-<script>
+<script lang="ts">
 
 </script>
 
