@@ -1,23 +1,25 @@
 <template>
 
-  <!-- <h2>ceshi </h2> -->
-  <PdfPreview />
-  <HelloWorld msg="123456" />
+  <h2>ceshi </h2>
+  <PdfPreview :pdfUrl="jsPdf" />
 
 </template>
 
-  <script lang="ts">
-  // import PDFView from "./components/pdfPreview.vue"
-  // import jsPdf from "../components/pdfPreview.vue"
-  import HelloWorld from "@/components/HelloWorld.vue";
-  import PdfPreview from "@/components/PdfPreview.vue";
+  <script  lang="ts">
+  import PdfPreview from "../components/PdfPreview.vue"
+  // import jsPdf from "../assets/testfile.pdf"//引用pdf路径
+  
+  // import PdfPreview from "@/components/PdfPreview.vue";
+  
   export default {
     data() {
       return {
-        filepath: "../assets/testfile.pdf"
+        jsPdf: '../assets/testfile.pdf'
       };
     },
-    components: { PdfPreview, HelloWorld }
+    components: {
+      PdfPreview
+    }
   }
   
   

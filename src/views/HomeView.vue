@@ -14,7 +14,7 @@ export default {
   data() {
     return {
       activeName: 'first',
-      jsPdf: '../assets/testfile.pdf'
+
     }
   },
   methods: {
