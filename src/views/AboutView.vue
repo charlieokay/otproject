@@ -14,7 +14,7 @@
   export default {
     data() {
       return {
-        jsPdf: '../assets/testfile.pdf'
+        jsPdf: './testfile.pdf'
       };
     },
     components: {

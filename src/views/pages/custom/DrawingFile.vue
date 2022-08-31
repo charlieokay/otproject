@@ -4,8 +4,12 @@
     <el-row>
         <el-col v-for="list in showLists" :key="list['product_name']" :span="8" :offset="list['index'] > 0 ? 2 : 0">
             <el-card :body-style="{ padding: '0px' }">
-                <img src="@/assets/drawingfile/MINI铝壳-破孔.jpeg" class="image" />
-                <div style="padding: 14px">
+                <span>
+                    <img style="width:50px;height:50px"
+                        :src="'https://61.177.38.142:8888/API/V1/Private/SynFactory/FileManagement/Download/_system/N824318   R2.5/正式工艺/机加工/N824318检测.jpg'" />
+                </span>
+                <div style=" padding: 14px">
+
                     <span>{{  list['product_name']  }}</span><br />
                     <span>{{  list['devices_name']  }}</span><br />
                     <span>{{  list['tenant_id']  }}</span><br />

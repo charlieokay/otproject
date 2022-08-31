@@ -5,17 +5,22 @@
     <el-tab-pane label="Role">Role</el-tab-pane>
     <el-tab-pane label="Task">Task</el-tab-pane>
   </el-tabs>
+  <hr>
+  <TestViewVue />
 </template>
 
 <script lang="ts">
 import type { TabsPaneContext } from 'element-plus'
-
+import TestViewVue from '@/components/TestView.vue'
 export default {
   data() {
     return {
       activeName: 'first',
 
     }
+  },
+  components: {
+    TestViewVue
   },
   methods: {
     handleClick(tab: TabsPaneContext, event: Event) {

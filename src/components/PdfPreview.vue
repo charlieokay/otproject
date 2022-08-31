@@ -1,10 +1,18 @@
 <template>
     <div class="pdf-preview">
     </div>
+    <div class="page-tool">//pdf操作
+        <div class="page-tool-item">上一页</div>
+        <div class="page-tool-item">下一页</div>
+        <div class="page-tool-item">{{  state.pageNum  }}/{{  state.numPages  }}</div>
+        <div class="page-tool-item">放大</div>
+        <div class="page-tool-item">缩小</div>
+    </div>
     <div class="pdf-wrap">
         <vue-pdf-embed :source="state.source" :style="scaleFun" class="vue-pdf-embed" :page="state.pageNum" />
     </div>
 </template>
+
 <script setup lang="ts">
 import { reactive, onMounted, computed, defineProps } from "vue";
 import VuePdfEmbed from "vue-pdf-embed";
@@ -15,7 +23,7 @@ const props = defineProps({
         type: String,
         required: true
     }
-})
+});
 
 const state = reactive({
     source: props.pdfUrl, //预览pdf文件地址
@@ -30,6 +38,7 @@ onMounted(() => {
         state.numPages = pdf.numPages;
     });
 });
+
 </script>
 <style lang="css" scoped>
 .pdf-preview {
