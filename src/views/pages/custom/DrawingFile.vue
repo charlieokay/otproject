@@ -55,6 +55,7 @@ export default {
             product_name: '',//产品名称
             devices_name: '',//机台名称
             tenant_id: '',
+            name: '',
             drawingfile_name: '',
             drawingfile_file_name: '',//文件名
             drawingfile_file_path: '',//文件地址
@@ -72,13 +73,8 @@ export default {
     // 数据初始化，created是发生在mounted之前的，template还没有被渲染成html，但是在这个阶段已经可以获取到props和data了，所以在这一个步进行数据赋值是比较恰当的.mounted 顾名思义是页面已经渲染完成了，template已经被渲染成了html，这个时候再进行数据请求，很有可能会造成页面闪屏。
 
     created() {
+        //通过API接口获取 资料数据 信息
         axios.get('/api/public//productSchedule/standard/?page_index=1&show_count=16',
-            // {
-            //     //如果没有要传给后台的数据这里可以为空,但最好留着这个花括号,不然后台可能将response当做数据
-            // },
-            // {
-            //     responseType: 'blob', // responseType: 'blob',
-            // },
             {
                 headers: {
                     "Authorization": "Bearer " + localStorage.getItem('Authorization'),
@@ -108,6 +104,9 @@ export default {
                             const name = item1.name
                             const file_name = item1.file_name
                             const file_path = item1.file_path
+
+                            this.file_path = file_path //将数据集内部循环的出的file_path return出去
+
                             const resource_type = item1.columnAttribute.resource_type
                             const resource_type_str = item1.columnAttribute.resource_type_str
 
