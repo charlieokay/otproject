@@ -33,8 +33,6 @@
 
 <script >
 import axios from 'axios'
-
-
 // export interface dataType {
 //     showLists: [],
 //     product_name: string,//产品名称
@@ -103,8 +101,6 @@ export default {
                             const file_name = item1.file_name
                             const file_path = item1.file_path
 
-                            this.file_path = file_path //将数据集内部循环的出的file_path return出去
-
                             const resource_type = item1.columnAttribute.resource_type
                             const resource_type_str = item1.columnAttribute.resource_type_str
 
@@ -127,17 +123,17 @@ export default {
             })
 
         //获取文档档图纸
-        axios.post('/api/cloud-api/file-management/fileDownload',//API调取准备
-            {
-                //图档地址
-                filePath: "/_system/N863613   R3/正式工艺/机加工/N863613检测.jpg",
-            })
-            .then(res => {
-                console.log(res)
-            })
-            .catch(err => {
-                alert(err)
-            })
+        // axios.post('/api/cloud-api/file-management/fileDownload',//API调取准备
+        //     {
+        //         //图档地址
+        //         filePath: "/_system/N863613   R3/正式工艺/机加工/N863613检测.jpg",
+        //     })
+        //     .then(res => {
+        //         console.log(res)
+        //     })
+        //     .catch(err => {
+        //         alert(err)
+        //     })
 
     },
     methods: {

@@ -33,6 +33,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/drawingfile',
     name: 'drawingfile',
     component: () => import(/* webpackChunkName: "dataresource" */ '../views/pages/drawingfile/DrawingFile.vue')
+  },
+  {
+    path: '/checkinout',
+    name: 'checkinout',
+    component: () => import(/* webpackChunkName: "dataresource" */ '../views/pages/checkinout/CheckinOut.vue')
+  },
+  {
+    path: '/orderlist',
+    name: 'orderlist',
+    component: () => import(/* webpackChunkName: "dataresource" */ '../views/pages/orderlist/OrderList.vue')
   }
 ]
 

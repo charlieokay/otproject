@@ -1,5 +1,5 @@
 <template>
-  <h2>机台签到签出</h2>
+  <h2>Home</h2>
 </template>
 
 <script lang="ts">

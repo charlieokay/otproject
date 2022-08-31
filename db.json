@@ -20,5 +20,15 @@
     "id":1,
     "filepath":"./src/assets/testfile.pdf",
     "name":"test"
-  }
+  },
+  "devices":[
+    {
+      "devices_name":"联聚-33",
+      "product_name":"N824318-4-1"
+    },
+    {
+      "devices_name":"联聚-34",
+      "product_name":"N851429-C3D1"
+    }
+  ]
 }

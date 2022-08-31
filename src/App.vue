@@ -2,17 +2,16 @@
   <el-tabs type="border-card">
 
     <el-tab-pane label="签到签出">
-      <HomeView />
+      <CheckinOut />
     </el-tab-pane>
 
     <el-tab-pane label="工单详情">
-      待接入
-      <!-- <router-link to="/">Home</router-link> -->
+      <OrderList />
     </el-tab-pane>
 
-    <el-tab-pane label="About">
+    <el-tab-pane label="测试">
       <AboutView />
-      <!-- <router-link to="/about">功能测试页面</router-link> -->
+
     </el-tab-pane>
 
     <el-tab-pane label="Product">
@@ -33,27 +32,31 @@
 
 <script  lang="ts">
 import type { TabsPaneContext } from 'element-plus'
-import HomeView from './views/HomeView.vue'
+import CheckinOut from './views/pages/checkinout/CheckinOut.vue'
+// import HomeView from './views/HomeView.vue'
 import AboutView from './views/AboutView.vue'
 import ProductView from './views/pages/product/ProductView.vue'
 import ProcessView from './views/pages/process/ProcessView.vue'
 import DrawingFile from './views/pages/drawingfile/DrawingFile.vue'
 import LoginView from './views/pages/login/LoginView.vue'
+import OrderList from './views/pages/orderlist/OrderList.vue'
+
+
 export default {
   components: {
-    HomeView,
+    CheckinOut,
+    // HomeView,
     AboutView,
     ProductView,
     ProcessView,
     DrawingFile,
-    LoginView
+    LoginView,
+    OrderList
   },
 
   methods: {
 
   },
-
-
 }
 
 </script>

@@ -1,7 +1,7 @@
 <template>
 
-  <h2>ceshi </h2>
-  <!-- <PdfPreview :pdfUrl="jsPdf" /> -->
+  <h2>测试获取图片 </h2>
+
   <hr>
   <TestView />
 
