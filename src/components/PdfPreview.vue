@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="pdf-preview">
     </div>
     <div class="page-tool">//pdf操作
@@ -56,4 +56,4 @@ onMounted(() => {
     margin: 0 auto;
     box-sizing: border-box;
 }
-</style>
+</style> -->

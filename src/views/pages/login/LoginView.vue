@@ -9,6 +9,10 @@
         <br>
         <br>
         <button @click="login">登录</button>
+
+        <br>
+        <el-alert title="登陆成功,请前往机台签到" type="success" center show-icon v-show="state" />
+
     </div>
 </template>
 
@@ -16,13 +20,13 @@
 import axios from 'axios'
 import { mapMutations } from "vuex";
 
-
 export default {
     data() {
         return {
             user_id: 'sysadmin',
             user_pwd: 'Syntec1234',
-            user_token: ''
+            user_token: '',
+            state: ''
         };
     },
     methods: {
@@ -46,6 +50,12 @@ export default {
                     //将Token存入localStorage中
                     localStorage.setItem("Authorization", Token)
 
+                    //判断登陆成功
+                    if (res.status === 200) {
+                        this.state = true
+                    } else {
+                        alert('信息错误，请重新填写')
+                    }
                     //跳转至product
                     this.$router.push('/product');
 
