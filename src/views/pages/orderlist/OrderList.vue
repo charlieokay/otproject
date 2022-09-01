@@ -15,7 +15,7 @@
     <div class="reportwork"></div>
 
     <div class="workorder">
-        <span>111111{{  listData.percentage  }}</span>
+        <span>111111{{ listData.percentage }}</span>
         <el-table :data="listData" style="width: 100%">
             <el-table-column fixed prop="orderNumber" label="工单号" />
             <el-table-column fixed prop="customerName" label="客户名称" />
@@ -98,7 +98,6 @@ const maplist = (parma) => {
 //         }
 
 export default {
-
     data() {
         return {
             listData: [], //展示数据数组
@@ -226,7 +225,6 @@ export default {
         };
     },
 
-
     //初始化列表
     beforeCreate() {
         axios
@@ -241,7 +239,6 @@ export default {
                 // multiSNSearch: "",
                 productionProcessList: [],
                 startIndex: 0,
-
                 // onDownloadProgress(a){
                 //     this.percentage=Math.round(a.standardProductionTime.loaded / a.requiredThroughput * 100);
                 // }
