@@ -67,7 +67,7 @@ export default {
                         this.state = true
                         setTimeout(() => {
                             // this.$router.push('/checkinout');
-                            this.tips = '请前往机台签到'
+                            this.tips = '请前往签到'
                         }, 3000);
                     } else {
                         alert('信息错误，请重新填写')
@@ -84,11 +84,12 @@ export default {
     }
 };
 </script>
+
 <style>
 @charset "utf-8";
 /* CSS Document */
 
-* {
+/* * {
     font: 13px/1.5 "微软雅黑";
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -97,19 +98,19 @@ export default {
     margin: 0;
     list-style: none;
     box-sizing: border-box;
-}
-
-/* body,
+} */
+/* 
+body,
 html {
     height: 100%;
     overflow: hidden;
 } */
 
-a {
+/* a {
     color: #27a9e3;
     text-decoration: none;
     cursor: pointer;
-}
+} */
 
 img {
     border: none;
@@ -180,6 +181,7 @@ img {
     vertical-align: middle;
 }
 
+/* 
 input[type="text"],
 input[type="file"],
 input[type="password"],
@@ -226,9 +228,9 @@ input[type="button"] {
     -webkit-appearance: none;
     outline: none;
     width: 100%;
-}
+} */
 
-.copyright {
+/* .copyright {
     font-size: 14px;
     color: #fff;
     display: block;
@@ -236,7 +238,7 @@ input[type="button"] {
     float: left;
     text-align: center;
     margin-top: 60px;
-}
+} */
 
 #password_text {
     border: 1px solid #dcdee0;

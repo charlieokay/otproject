@@ -15,7 +15,7 @@
     <div class="reportwork"></div>
 
     <div class="workorder">
-        <span>111111{{ listData.percentage }}</span>
+        <span>111111{{  listData.percentage  }}</span>
         <el-table :data="listData" style="width: 100%">
             <el-table-column fixed prop="orderNumber" label="工单号" />
             <el-table-column fixed prop="customerName" label="客户名称" />
@@ -247,7 +247,7 @@ export default {
                 // }
             })
             .then((res) => {
-                console.log(res.data.content.orderList)
+                // console.log(res.data.content.orderList)
                 //console.log("时间",res.data.content.orderList.productionOrderList.workOrderContent);
                 // console.log(this.expectedStartDate);
                 // this.$moment(this.orderExpectedDue).tz('Australia/Sydney').format('MMMM Do YYYY, h:mm:ss a')
@@ -266,7 +266,7 @@ export default {
                     this.Initiallist = maplist(res.data.content.orderList);
                 this.listData = this.Initiallist;
 
-                console.log(this.listData);
+                // console.log(this.listData);
             })
             .catch((err) => {
                 alert(err);
@@ -299,6 +299,7 @@ export default {
             });
 
             console.log("listData", this.listData);
+
             // console.log(productionProcess)
             //  console.log(this.listData)
         },
