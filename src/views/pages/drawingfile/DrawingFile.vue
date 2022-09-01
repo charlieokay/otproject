@@ -60,7 +60,7 @@ export default {
 
     created() {
         //通过API接口获取 资料数据 信息
-        axios.get('/api/public/productSchedule/standard/?page_index=1&show_count=16',
+        axios.get('/api/public/productSchedule/standard/?page_index=1&show_count=100',
             {
                 headers: {
                     "Authorization": "Bearer " + localStorage.getItem('Authorization'),
