@@ -6,13 +6,13 @@
     <div>
         选择设备:
         <el-select clearable placeholder="请选择需要签到的机台" @change="checkIn($event)">
-            <el-option v-for="list in machineList" :key="list.serialNumber" :value="list.machineName">
-                {{ list.machineName }}
+            <el-option v-for="list in machineList" :key="list['serialNumber']" :value="list['machineName']">
+                {{ list['machineName'] }}
             </el-option>
         </el-select>
         <p>{{ arrMachine }}</p>
         <hr />
-        <el-card class="mycard" v-for="item in arrMachine" :key="item.index" :data="item.value">
+        <el-card class="mycard" v-for="item in arrMachine" :key="item['index']" :data="item['value']">
             <template #header>
                 <div class="card-header">
                     <span>{{ item }}</span>
@@ -139,7 +139,6 @@ export default {
     float: left;
     margin-left: 15px;
     margin-bottom: 5px;
-
 }
 
 .card-header {

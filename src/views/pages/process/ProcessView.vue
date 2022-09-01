@@ -2,9 +2,10 @@
     <h2>程序调用模块</h2>
     <el-button @click="getdata">获取按钮</el-button>
     <el-row>
-        <el-col v-for="list in showLists" :key="list['product_name']" :span="8" :offset="list['index'] > 0 ? 2 : 0">
+        <el-col class="mycard" v-for="list in showLists" :key="list['product_name']" :span="8"
+            :offset="list['index'] > 0 ? 2 : 0">
             <el-card :body-style="{ padding: '0px' }">
-                <img src="@/assets/processes/MINI测试01.png" class="image" />
+                <img class="image" src="@/assets/processes/MINI测试01.png" />
                 <div style="padding: 14px">
                     <!-- <span>{{ list.product_name }}</span><br />
                     <span>{{ list.devices_name }}</span><br />
@@ -14,14 +15,14 @@
                     <span>{{ list.file_path }}</span><br />
                     <span>{{ list.resource_type }}</span><br />
                     <span>{{ list.resource_type_str }}</span><br /> -->
-                    <span>{{  list['product_name']  }}</span><br />
-                    <span>{{  list['devices_name']  }}</span><br />
-                    <span>{{  list['tenant_id']  }}</span><br />
-                    <span>{{  list['name']  }}</span><br />
-                    <span>{{  list['file_name']  }}</span><br />
-                    <span>{{  list['file_path']  }}</span><br />
-                    <span>{{  list['resource_type']  }}</span><br />
-                    <span>{{  list['resource_type_str']  }}</span><br />
+                    <span>{{ list['product_name'] }}</span><br />
+                    <span>{{ list['devices_name'] }}</span><br />
+                    <span>{{ list['tenant_id'] }}</span><br />
+                    <span>{{ list['name'] }}</span><br />
+                    <span>{{ list['file_name'] }}</span><br />
+                    <span>{{ list['file_path'] }}</span><br />
+                    <span>{{ list['resource_type'] }}</span><br />
+                    <span>{{ list['resource_type_str'] }}</span><br />
                     <div class="bottom">
                         <time class="time">{{ }}</time>
                         <el-button text class="button">Operating</el-button>
@@ -78,27 +79,30 @@ export default {
                     data_get.forEach((item) => {
                         const devices_name = item.devices_name
                         const product_name = item.product_name
-                        const tenant_id = item.tenant_id
-                        item?.custom_data_resource_columns?.processes.
-                            forEach((item1) => {
-                                const name = item1.name
-                                const file_name = item1.file_name
-                                const file_path = item1.file_path
-                                const resource_type = item1.columnAttribute.resource_type
-                                const resource_type_str = item1.columnAttribute.resource_type_str
+                        const getDevice = localStorage.getItem("getDevice")
+                        if (getDevice === devices_name) {
+                            const tenant_id = item.tenant_id
+                            item?.custom_data_resource_columns?.processes.
+                                forEach((item1) => {
+                                    const name = item1.name
+                                    const file_name = item1.file_name
+                                    const file_path = item1.file_path
+                                    const resource_type = item1.columnAttribute.resource_type
+                                    const resource_type_str = item1.columnAttribute.resource_type_str
 
-                                // 将数据存入数组内对象
-                                this.showLists.push({
-                                    "devices_name": devices_name,
-                                    "product_name": product_name,
-                                    "tenant_id": tenant_id,
-                                    "name": name,
-                                    "file_name": file_name,
-                                    "file_path": file_path,
-                                    "resource_type": resource_type,
-                                    "resource_type_str": resource_type_str
+                                    // 将数据存入数组内对象
+                                    this.showLists.push({
+                                        "devices_name": devices_name,
+                                        "product_name": product_name,
+                                        "tenant_id": tenant_id,
+                                        "name": name,
+                                        "file_name": file_name,
+                                        "file_path": file_path,
+                                        "resource_type": resource_type,
+                                        "resource_type_str": resource_type_str
+                                    })
                                 })
-                            })
+                        }
                     })
                 })
                 .catch(err => {
@@ -112,6 +116,13 @@ export default {
 .time {
     font-size: 12px;
     color: #999;
+}
+
+.mycard {
+    width: 30%;
+    text-align: left;
+    float: left;
+
 }
 
 .bottom {
@@ -128,7 +139,6 @@ export default {
 }
 
 .image {
-    width: 100%;
-    display: block;
+    width: 10px;
 }
 </style>

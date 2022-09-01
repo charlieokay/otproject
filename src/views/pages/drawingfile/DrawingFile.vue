@@ -72,40 +72,46 @@ export default {
             }
         )
             .then(res => {
-                //headers请求头的乱码数据转换为中文
+                //TODOheaders请求头的乱码数据转换为中文,
+                //TODO获取图档不成功
                 // const fileName = decodeURI(res.headers['content-disposition'].split(';')[1].split('=')[1])
 
                 //启用两个forEach循环，进行循环获取数据
                 //第一，通过循环获取data()下所有机台下属信息
                 //第二，通过循环获取客制的模块下属数据信息
+                //TODO选中机台，可获取图档，但需要刷新后才能获得
 
                 const data_get = res.data.content.data//得到数组data[]数据
                 data_get.forEach((item) => {
+                    const getDevice = localStorage.getItem("getDevice")
                     const devices_name = item.devices_name
-                    const product_name = item.product_name
-                    const tenant_id = item.tenant_id
-                    //data[]数组下的每个数据进行循环，再次深入循环获取
-                    item?.custom_data_resource_columns?.drawingfile.
-                        forEach((item1) => {
-                            const name = item1.name
-                            const file_name = item1.file_name
-                            const file_path = item1.file_path
+                    if (getDevice === devices_name) {
+                        const product_name = item.product_name
+                        const tenant_id = item.tenant_id
+                        //data[]数组下的每个数据进行循环，再次深入循环获取
+                        item?.custom_data_resource_columns?.drawingfile.
+                            forEach((item1) => {
+                                const name = item1.name
+                                const file_name = item1.file_name
+                                const file_path = item1.file_path
 
-                            const resource_type = item1.columnAttribute.resource_type
-                            const resource_type_str = item1.columnAttribute.resource_type_str
+                                const resource_type = item1.columnAttribute.resource_type
+                                const resource_type_str = item1.columnAttribute.resource_type_str
 
-                            // 将数据存入数组内对象
-                            this.showLists.push({
-                                "devices_name": devices_name,
-                                "product_name": product_name,
-                                "tenant_id": tenant_id,
-                                "name": name,
-                                "file_name": file_name,
-                                "file_path": file_path,
-                                "resource_type": resource_type,
-                                "resource_type_str": resource_type_str
+                                // 将数据存入数组内对象
+                                this.showLists.push({
+                                    "devices_name": devices_name,
+                                    "product_name": product_name,
+                                    "tenant_id": tenant_id,
+                                    "name": name,
+                                    "file_name": file_name,
+                                    "file_path": file_path,
+                                    "resource_type": resource_type,
+                                    "resource_type_str": resource_type_str
+                                })
                             })
-                        })
+                    }
+
                 })
             })
             .catch(err => {
