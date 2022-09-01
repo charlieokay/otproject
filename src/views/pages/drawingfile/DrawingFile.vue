@@ -8,14 +8,14 @@
                     <img style="width:50px;height:50px" src="" />
                 </span>
                 <div style=" padding: 14px">
-                    <span>{{  list['product_name']  }}</span><br />
-                    <span>{{  list['devices_name']  }}</span><br />
-                    <span>{{  list['tenant_id']  }}</span><br />
-                    <span>{{  list['name']  }}</span><br />
-                    <span>{{  list['file_name']  }}</span><br />
-                    <span>{{  list['file_path']  }}</span><br />
-                    <span>{{  list['resource_type']  }}</span><br />
-                    <span>{{  list['resource_type_str']  }}</span><br />
+                    <span>{{ list['product_name'] }}</span><br />
+                    <span>{{ list['devices_name'] }}</span><br />
+                    <span>{{ list['tenant_id'] }}</span><br />
+                    <span>{{ list['name'] }}</span><br />
+                    <span>{{ list['file_name'] }}</span><br />
+                    <span>{{ list['file_path'] }}</span><br />
+                    <span>{{ list['resource_type'] }}</span><br />
+                    <span>{{ list['resource_type_str'] }}</span><br />
                     <div class="bottom">
                         <time class="time">时间：</time>
                         <!-- <div>
@@ -33,17 +33,7 @@
 
 <script >
 import axios from 'axios'
-// export interface dataType {
-//     showLists: [],
-//     product_name: string,//产品名称
-//     devices_name: string,//机台名称
-//     tenant_id: string,
-//     drawingfile_name: string,
-//     drawingfile_file_name: string,//文件名
-//     drawingfile_file_path: string,//文件地址
-//     resource_type: string,//类型英文
-//     resource_type_str: string//类型中文
-// }
+
 export default {
     data() {
         return {
