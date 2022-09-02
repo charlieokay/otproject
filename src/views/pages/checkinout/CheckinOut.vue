@@ -134,7 +134,7 @@ export default {
 
 
 .mycard {
-    width: 30%;
+    width: 20%;
     text-align: left;
     float: left;
     margin-left: 15px;
@@ -156,13 +156,12 @@ export default {
 }
 
 .box-card {
-    width: 35%;
+    width: 20%;
 }
 
-.getdevice {
-
+/* .getdevice {
     float: left
-}
+} */
 
 .outbutton {
     float: right;

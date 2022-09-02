@@ -5,7 +5,7 @@
         <el-col class="mycard" v-for="list in showLists" :key="list['product_name']" :span="8"
             :offset="list['index'] > 0 ? 2 : 0">
             <el-card :body-style="{ padding: '0px' }">
-                <img class="image" src="@/assets/processes/MINI测试01.png" />
+                <img class="image" src="" />
                 <div style="padding: 14px">
                     <!-- <span>{{ list.product_name }}</span><br />
                     <span>{{ list.devices_name }}</span><br />

@@ -15,7 +15,7 @@
     <div class="reportwork"></div>
 
     <div class="workorder">
-        <span>111111{{ listData.percentage }}</span>
+        <!-- <span>111111{{ listData.percentage }}</span> -->
         <el-table :data="listData" style="width: 100%">
             <el-table-column fixed prop="orderNumber" label="工单号" />
             <el-table-column fixed prop="customerName" label="客户名称" />
@@ -25,7 +25,6 @@
             <el-table-column prop="partNumber" label="产品料号" />
             <el-table-column prop="requiredThroughput" label="需求工件数" />
             <el-table-column prop="standardProductionTime" label="已完成" />
-
             <el-table-column prop="percentage" label="工单进度" width="200">
                 <el-progress :percentage="percentage" :color="customColors" />
             </el-table-column>
@@ -71,9 +70,7 @@ const maplist = (parma) => {
                     expectedStartDate: expectedStartDate,//预计开工日期
                     requiredThroughput: requiredThroughput,//需求工件数
                     standardProductionTime: standardProductionTime,//已加工工件数
-
                     // percentage:(standardProductionTime/requiredThroughput)*100,//工单进度
-
                     productionProcess: productionProcess,//工序
                     machineID: machineID,//机台ID
                     machineName: machineName,//机台名称
@@ -82,7 +79,7 @@ const maplist = (parma) => {
             });
         });
     });
-    console.log("DataOrdList", DataOrdList);
+    // console.log("DataOrdList", DataOrdList);
     return DataOrdList;
 };
 
@@ -98,6 +95,7 @@ const maplist = (parma) => {
 //         }
 
 export default {
+
     data() {
         return {
             listData: [], //展示数据数组
@@ -106,112 +104,8 @@ export default {
             // productionProcessList:[],
             Initiallist: [],
             machineName: "",
-            options: [
-                {
-                    machineName: "联聚-11",
-                    label: "联聚-11",
-                },
-                {
-                    machineName: "联聚-12",
-                    label: "联聚-12",
-                },
-                {
-                    machineName: "联聚-13",
-                    label: "联聚-13",
-                },
-                {
-                    machineName: "联聚-14",
-                    label: "联聚-14",
-                },
-                {
-                    machineName: "联聚-15",
-                    label: "联聚-15",
-                },
-                {
-                    machineName: "联聚-16",
-                    label: "联聚-16",
-                },
-                {
-                    machineName: "联聚-17",
-                    label: "联聚-17",
-                },
-                {
-                    machineName: "联聚-22",
-                    label: "联聚-22",
-                },
-                {
-                    machineName: "联聚-23",
-                    label: "联聚-23",
-                },
-                {
-                    machineName: "联聚-24",
-                    label: "联聚-24",
-                },
-                {
-                    machineName: "联聚-25",
-                    label: "联聚-25",
-                },
-                {
-                    machineName: "联聚-26",
-                    label: "联聚-26",
-                },
-                {
-                    machineName: "联聚-31",
-                    label: "联聚-31",
-                },
-                {
-                    machineName: "联聚-32",
-                    label: "联聚-32",
-                },
-                {
-                    machineName: "联聚-33",
-                    label: "联聚-33",
-                },
-                {
-                    machineName: "联聚-34",
-                    label: "联聚-34",
-                },
-                {
-                    machineName: "联聚-35",
-                    label: "联聚-35",
-                },
-                {
-                    machineName: "联聚-36",
-                    label: "联聚-36",
-                },
-                {
-                    machineName: "联聚-37",
-                    label: "联聚-37",
-                },
-                {
-                    machineName: "联聚-38",
-                    label: "联聚-38",
-                },
-                {
-                    machineName: "联聚-42",
-                    label: "联聚-42",
-                },
-                {
-                    machineName: "联聚-43",
-                    label: "联聚-43",
-                },
-                {
-                    machineName: "联聚-44",
-                    label: "联聚-44",
-                },
-                {
-                    machineName: "联聚-45",
-                    label: "联聚-45",
-                },
-                {
-                    machineName: "联聚-46",
-                    label: "联聚-46",
-                },
-                {
-                    machineName: "联聚-47",
-                    label: "联聚-47",
-                },
-            ],
+            options: [],//选择机台下拉框
+            percentage: "80",
             customColors: [
                 { color: '#f56c6c', percentage: 20 },
                 { color: '#e6a23c', percentage: 40 },
@@ -219,11 +113,9 @@ export default {
                 { color: '#1989fa', percentage: 80 },
                 { color: '#6f7ad3', percentage: 100 },
             ],
-            percentage: "80",
-
-            // DataOrdList: DataOrdList,
         };
     },
+
 
     //初始化列表
     beforeCreate() {
@@ -239,12 +131,13 @@ export default {
                 // multiSNSearch: "",
                 productionProcessList: [],
                 startIndex: 0,
+
                 // onDownloadProgress(a){
                 //     this.percentage=Math.round(a.standardProductionTime.loaded / a.requiredThroughput * 100);
                 // }
             })
             .then((res) => {
-                // console.log(res.data.content.orderList)
+                console.log(res.data.content.orderList)
                 //console.log("时间",res.data.content.orderList.productionOrderList.workOrderContent);
                 // console.log(this.expectedStartDate);
                 // this.$moment(this.orderExpectedDue).tz('Australia/Sydney').format('MMMM Do YYYY, h:mm:ss a')
@@ -263,11 +156,20 @@ export default {
                     this.Initiallist = maplist(res.data.content.orderList);
                 this.listData = this.Initiallist;
 
-                // console.log(this.listData);
+                console.log(this.listData);
             })
             .catch((err) => {
                 alert(err);
             });
+    },
+    beforeUpdate() {
+        const machineName = localStorage.getItem("getDevice")
+        this.listData = this.Initiallist.filter((temp) => {
+            //console.log(temp.productionProcessList)
+            //console.log(temp.machineIDList);
+            //=== 严格比较
+            return temp.machineName == machineName;
+        });
     },
 
     //1. 先区分筛选前的数据 初始 = []和筛选后的数据 listData = []
@@ -284,22 +186,21 @@ export default {
 
     methods: {
         //根据机台名称筛选列表
-        filter(machineName) {
-            console.log("machineName", machineName);
-            // console.log(this.Initiatllist)
-            //filter((t)=>{return (条件)})
-            this.listData = this.Initiallist.filter((temp) => {
-                //console.log(temp.productionProcessList)
-                //console.log(temp.machineIDList);
-                //=== 严格比较
-                return temp.machineName == machineName;
-            });
+        // filter(machineName) {
+        //     console.log("machineName", machineName);
+        //     // console.log(this.Initiatllist)
+        //     //filter((t)=>{return (条件)})
+        //     this.listData = this.Initiallist.filter((temp) => {
+        //         //console.log(temp.productionProcessList)
+        //         //console.log(temp.machineIDList);
+        //         //=== 严格比较
+        //         return temp.machineName == machineName;
+        //     });
 
-            console.log("listData", this.listData);
-
-            // console.log(productionProcess)
-            //  console.log(this.listData)
-        },
+        //     // console.log("listData", this.listData);
+        //     // console.log(productionProcess)
+        //     //  console.log(this.listData)
+        // },
 
     },
 };

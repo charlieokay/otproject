@@ -15,9 +15,10 @@
                 </p>
             </div>
             <form>
-                <input type="text" v-model="user_id" placeholder="用户名" name="username">
+                <input class="myinput" type="text" v-model="user_id" placeholder="用户名" name="username">
 
-                <input name="password" type="password" v-model="user_pwd" id="password" placeholder="密码" />
+                <input class="myinput" name="password" type="password" v-model="user_pwd" id="password"
+                    placeholder="密码" />
                 <input value="登录" style="width:100%;" @click="login" type="submit">
             </form>
             <el-alert :title="tips" type="success" center show-icon v-show="state" />
@@ -181,7 +182,7 @@ img {
     vertical-align: middle;
 }
 
-/* 
+
 input[type="text"],
 input[type="file"],
 input[type="password"],
@@ -228,7 +229,7 @@ input[type="button"] {
     -webkit-appearance: none;
     outline: none;
     width: 100%;
-} */
+}
 
 /* .copyright {
     font-size: 14px;

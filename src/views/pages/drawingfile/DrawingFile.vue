@@ -58,7 +58,7 @@ export default {
     // },
     // 数据初始化，created是发生在mounted之前的，template还没有被渲染成html，但是在这个阶段已经可以获取到props和data了，所以在这一个步进行数据赋值是比较恰当的.mounted 顾名思义是页面已经渲染完成了，template已经被渲染成了html，这个时候再进行数据请求，很有可能会造成页面闪屏。
 
-    created() {
+    beforeMount() {
         //通过API接口获取 资料数据 信息
         axios.get('/api/public/productSchedule/standard/?page_index=1&show_count=100',
             {
