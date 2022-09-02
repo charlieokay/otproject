@@ -9,14 +9,14 @@
       <OrderList />
     </el-tab-pane>
 
-    <el-tab-pane label="测试">
+    <!-- <el-tab-pane label="测试">
       <AboutView />
+    </el-tab-pane> -->
 
-    </el-tab-pane>
-
-    <el-tab-pane label="Product">
+    <!-- <el-tab-pane label="Product">
       <ProductView />
-    </el-tab-pane>
+    </el-tab-pane> -->
+
     <el-tab-pane label="程序调用">
       <ProcessView />
     </el-tab-pane>
@@ -34,8 +34,8 @@
 import type { TabsPaneContext } from 'element-plus'
 import CheckinOut from './views/pages/checkinout/CheckinOut.vue'
 // import HomeView from './views/HomeView.vue'
-import AboutView from './views/AboutView.vue'
-import ProductView from './views/pages/product/ProductView.vue'
+// import AboutView from './views/AboutView.vue'
+// import ProductView from './views/pages/product/ProductView.vue'
 import ProcessView from './views/pages/process/ProcessView.vue'
 import DrawingFile from './views/pages/drawingfile/DrawingFile.vue'
 import LoginView from './views/pages/login/LoginView.vue'
@@ -46,8 +46,8 @@ export default {
   components: {
     CheckinOut,
     // HomeView,
-    AboutView,
-    ProductView,
+    // AboutView,
+    // ProductView,
     ProcessView,
     DrawingFile,
     LoginView,

@@ -1,13 +1,14 @@
 <template>
-    <h2>程序调用模块</h2>
-    <el-button @click="getdata">获取按钮</el-button>
-    <el-row>
-        <el-col class="mycard" v-for="list in showLists" :key="list['product_name']" :span="8"
-            :offset="list['index'] > 0 ? 2 : 0">
-            <el-card :body-style="{ padding: '0px' }">
-                <img class="image" src="" />
-                <div style="padding: 14px">
-                    <!-- <span>{{ list.product_name }}</span><br />
+    <div @click="getprocess">
+        <h2>程序调用模块</h2>
+        <el-button @click="getdata">获取按钮</el-button>
+        <el-row>
+            <el-col class="mycard" v-for="list in showLists" :key="list['product_name']" :span="8"
+                :offset="list['index'] > 0 ? 2 : 0">
+                <el-card :body-style="{ padding: '0px' }">
+                    <img class="image" src="" />
+                    <div style="padding: 14px">
+                        <!-- <span>{{ list.product_name }}</span><br />
                     <span>{{ list.devices_name }}</span><br />
                     <span>{{ list.tenant_id }}</span><br />
                     <span>{{ list.name }}</span><br />
@@ -15,23 +16,23 @@
                     <span>{{ list.file_path }}</span><br />
                     <span>{{ list.resource_type }}</span><br />
                     <span>{{ list.resource_type_str }}</span><br /> -->
-                    <span>{{ list['product_name'] }}</span><br />
-                    <span>{{ list['devices_name'] }}</span><br />
-                    <span>{{ list['tenant_id'] }}</span><br />
-                    <span>{{ list['name'] }}</span><br />
-                    <span>{{ list['file_name'] }}</span><br />
-                    <span>{{ list['file_path'] }}</span><br />
-                    <span>{{ list['resource_type'] }}</span><br />
-                    <span>{{ list['resource_type_str'] }}</span><br />
-                    <div class="bottom">
-                        <time class="time">{{ }}</time>
-                        <el-button text class="button">Operating</el-button>
+                        <span>{{ list['product_name'] }}</span><br />
+                        <span>{{ list['devices_name'] }}</span><br />
+                        <span>{{ list['tenant_id'] }}</span><br />
+                        <span>{{ list['name'] }}</span><br />
+                        <span>{{ list['file_name'] }}</span><br />
+                        <span>{{ list['file_path'] }}</span><br />
+                        <span>{{ list['resource_type'] }}</span><br />
+                        <span>{{ list['resource_type_str'] }}</span><br />
+                        <div class="bottom">
+                            <time class="time">{{ }}</time>
+                            <el-button text class="button">Operating</el-button>
+                        </div>
                     </div>
-                </div>
-            </el-card>
-        </el-col>
-    </el-row>
-
+                </el-card>
+            </el-col>
+        </el-row>
+    </div>
 </template>
 
 <script>
@@ -56,9 +57,7 @@ export default {
     //     console.log(this.showList)
     // },
     methods: {
-
-
-        getdata() {
+        getprocess() {
             axios.get('/api/public//productSchedule/standard/?page_index=1&show_count=16',
                 {
                     // responseType: 'blob',

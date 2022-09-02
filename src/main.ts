@@ -4,7 +4,7 @@ import router from './router'
 import store from './store'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import pdf from 'vue3-pdfjs' //引用插件vue3-pdfjs
+import pdf from 'vue3-pdfjs' //引用插件vue3-pdfjs 
 // import 'element-ui/lib/theme-chalk/index.css'
 
 createApp(App)

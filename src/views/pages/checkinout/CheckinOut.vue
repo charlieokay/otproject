@@ -4,13 +4,11 @@
         {{ machine }}
     </div> -->
     <div>
-        选择设备:
-        <el-select clearable placeholder="请选择需要签到的机台" @change="checkIn($event)">
+        <el-select class="select" clearable placeholder="请选择需要签到的机台" @change="checkIn($event)">
             <el-option v-for="list in machineList" :key="list['serialNumber']" :value="list['machineName']">
                 {{ list['machineName'] }}
             </el-option>
         </el-select>
-        <p>{{ arrMachine }}</p>
         <hr />
         <el-card class="mycard" v-for="item in arrMachine" :key="item['index']" :data="item['value']">
             <template #header>
@@ -56,25 +54,27 @@ export default {
     created() {
         axios
             .post("api/v1/Private/SynFactory/EquipmentList", {
-                count: 10,
+                count: 100,
                 equipmentName: "",
                 equipmentType: 0,
                 groupID: "",
                 startIndex: 0
             })
             .then((res) => {
+                console.log(res)
                 res.data.content.data.forEach((item) => {
                     const machineName = item.machineName;//机台名称
                     const serialNumber = item.serialNumber;//机台编号
+
                     this.machineList.push(
                         {
                             "machineName": machineName,
                             "serialNumber": serialNumber
                         }
                     )
-                    console.log(item)
+                    // console.log(item)
                 });
-                console.log(res.data.content.data)
+                // console.log(res.data.content.data)
             })
             .catch((err) => {
                 alert(err);
@@ -83,15 +83,12 @@ export default {
         const arr = localStorage.getItem("machineList")
         this.arrMachine = JSON.parse(arr)
         //TODO：若localStorage中机台为空，则无法获取，需要进行调整
-
         //签到时间
         // this.gettime()
-
     },
     methods: {
         //签到操作
         checkIn(e) {
-
             //e 即为获取的选择框的数据，机台名称
             //将添加到localstorage中的机台添加到machineLocal数组中
             // this.machineLocal.push(localStorage.getItem(e))
@@ -112,7 +109,7 @@ export default {
         },
 
         getDevice(item) {
-            alert(item)
+            // alert(item)
             localStorage.setItem("getDevice", item);
         }
 
@@ -159,7 +156,7 @@ export default {
     width: 20%;
 }
 
-/* .getdevice {
+/* .select {
     float: left
 } */
 
