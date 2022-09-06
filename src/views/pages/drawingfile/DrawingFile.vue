@@ -1,4 +1,5 @@
 <template>
+    <!-- <div @click="refresh"> -->
     <div @click="getdrawingfile">
         <h2>图档模块</h2>
         <!-- <el-button @click="getdata">获取按钮</el-button> -->
@@ -34,7 +35,7 @@
 
 <script >
 import axios from 'axios'
-
+import { inject } from "vue";
 export default {
     data() {
         return {
@@ -49,6 +50,14 @@ export default {
             resource_type: '',//类型英文
             resource_type_str: ''//类型中文
         }
+    },
+    setup() {
+        const refresh = inject("reload");
+        //在方法体中的调用方法
+        // refresh();
+        return {
+            refresh,
+        };
     },
     components: {
 

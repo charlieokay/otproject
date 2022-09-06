@@ -13,6 +13,15 @@ npm install
 npm install axios --save
 npm install jsonwebtoken --save
 ```
+##  vue@3.2.8 vue-router@4.0.11 vuex@4.0.2 版本
+```
+npm i vue@3.2.8 vue-router@4.0.11 vuex@4.0.2
+
+查看 package.json 得到的版本应为：
+"vue": "^3.2.8",
+"vue-router": "^4.0.11",
+"vuex": "^4.0.2"
+```
 
 ## Element Plus install
 ```
