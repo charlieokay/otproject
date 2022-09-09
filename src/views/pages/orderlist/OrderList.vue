@@ -1,6 +1,6 @@
 <template>
+  <el-button type="info" plain @click="refresh">刷新工单数据</el-button>
   <div @click="screen">
-    <el-button type="info" plain @click="refresh">刷新工单数据</el-button>
     <h4>工单信息</h4>
     <div class="handle-box"></div>
     <div class="reportwork"></div>
@@ -159,16 +159,13 @@ export default {
                 expectedStartDate: expectedStartDate, //预计开工日期
                 requiredThroughput: requiredThroughput, //需求工件数
                 standardProductionTime: standardProductionTime, //已加工工件数
-
                 percentage: percentage, //工单进度
-
                 productionProcess: productionProcess, //工序
                 machineID: machineID, //机台ID
                 machineName: machineName, //机台名称
                 state: state, //订单状态
               });
-              this.listData = this.DataOrdList;
-              this.progressPercent = percentage;
+              this.listData = this.DataOrdList; //将获取的对象数组，传给listData,进行页面渲染
             });
           });
         });

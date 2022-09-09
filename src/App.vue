@@ -8,10 +8,6 @@
       <OrderList />
     </el-tab-pane>
 
-    <!-- <el-tab-pane label="测试">
-      <AboutView />
-    </el-tab-pane> -->
-
     <!-- <el-tab-pane label="Product">
       <ProductView />
     </el-tab-pane> -->
@@ -27,6 +23,10 @@
     <el-tab-pane label="登录">
       <LoginView />
     </el-tab-pane>
+
+    <!-- <el-tab-pane label="测试">
+      <AboutView />
+    </el-tab-pane> -->
   </el-tabs>
 </template>
 
@@ -34,7 +34,7 @@
 import type {TabsPaneContext} from "element-plus";
 import CheckinOut from "./views/pages/checkinout/CheckinOut.vue";
 // import HomeView from './views/HomeView.vue'
-// import AboutView from './views/AboutView.vue'
+// import AboutView from "./views/AboutView.vue";
 // import ProductView from './views/pages/product/ProductView.vue'
 import ProcessView from "./views/pages/process/ProcessView.vue";
 import DrawingFile from "./views/pages/drawingfile/DrawingFile.vue";
